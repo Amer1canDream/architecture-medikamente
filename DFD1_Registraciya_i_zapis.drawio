@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="25.0.3">
+  <diagram name="DFD1 Registraciya pacienta i zapis na priem" id="DFD1_Registraciya_pacienta_i_zapis_na_priem">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c3" value="Пациент" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="260" width="160" height="60" as="geometry"/></mxCell>
+<mxCell id="c4" value="Администратор ресепшена" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="60" width="160" height="60" as="geometry"/></mxCell>
+<mxCell id="c5" value="П1. Регистрация пациента&lt;br&gt;(внесение ФИО, ДР, телефона, email)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=30;fontSize=12;" vertex="1" parent="1"><mxGeometry x="300" y="60" width="220" height="80" as="geometry"/></mxCell>
+<mxCell id="c6" value="П2. Оформление расширенной анкеты&lt;br&gt;(адрес, работа, хронич. заболевания)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=30;fontSize=12;" vertex="1" parent="1"><mxGeometry x="300" y="260" width="220" height="80" as="geometry"/></mxCell>
+<mxCell id="c7" value="П3. Запись пациента к специалисту" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=30;fontSize=12;" vertex="1" parent="1"><mxGeometry x="300" y="420" width="220" height="80" as="geometry"/></mxCell>
+<mxCell id="c8" value="Patients.xlsx&lt;br&gt;(список пациентов)" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;boundedLbl=1;" vertex="1" parent="1"><mxGeometry x="660" y="60" width="200" height="90" as="geometry"/></mxCell>
+<mxCell id="c9" value="Папка Pacient-FIO-BD&lt;br&gt;(сканы паспорта, анкеты, JPG/PDF)" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;boundedLbl=1;" vertex="1" parent="1"><mxGeometry x="660" y="220" width="200" height="90" as="geometry"/></mxCell>
+<mxCell id="c10" value="Journal-Doctor-FIO.xlsx&lt;br&gt;(журнал записи к врачу)" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;boundedLbl=1;" vertex="1" parent="1"><mxGeometry x="660" y="400" width="200" height="90" as="geometry"/></mxCell>
+<mxCell id="c11" value="ФИО, дата рождения,&lt;br&gt;телефон, email" style="endArrow=block;html=1;fontSize=10;strokeColor=#666666;fontColor=#333333;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="c3" target="c5"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="c12" value="адрес, место работы,&lt;br&gt;хронические заболевания" style="endArrow=block;html=1;fontSize=10;strokeColor=#666666;fontColor=#333333;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="c3" target="c6"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="c13" value="ввод данных" style="endArrow=block;html=1;fontSize=10;strokeColor=#666666;fontColor=#333333;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="c4" target="c5"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="c14" value="выбор врача и времени" style="endArrow=block;html=1;fontSize=10;strokeColor=#666666;fontColor=#333333;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="c4" target="c7"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="c15" value="запись строки&lt;br&gt;в Excel" style="endArrow=block;html=1;fontSize=10;strokeColor=#666666;fontColor=#333333;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="c5" target="c8"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="c16" value="сохранение скана&lt;br&gt;анкеты" style="endArrow=block;html=1;fontSize=10;strokeColor=#666666;fontColor=#333333;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="c6" target="c9"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="c17" value="запись в журнал&lt;br&gt;специалиста" style="endArrow=block;html=1;fontSize=10;strokeColor=#666666;fontColor=#333333;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="c7" target="c10"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="c18" value="Проблема: спецкатегория ПДн&lt;br&gt;(здоровье) хранится в общем&lt;br&gt;Excel без шифрования.&lt;br&gt;Рекомендация: шифрование&lt;br&gt;файла, тег PHI, RBAC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=2;dashed=1;arcSize=20;" vertex="1" parent="1"><mxGeometry x="900" y="60" width="230" height="90" as="geometry"/></mxCell>
+<mxCell id="c19" value="Проблема: сканы документов&lt;br&gt;на общем диске доступны&lt;br&gt;всем по доменной учетке.&lt;br&gt;Рекомендация: обезличивание&lt;br&gt;имени файла + шифрование&lt;br&gt;папки + аудит доступа" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=2;dashed=1;arcSize=20;" vertex="1" parent="1"><mxGeometry x="900" y="220" width="230" height="90" as="geometry"/></mxCell>
+<mxCell id="c20" value="Проблема: журнал доступен&lt;br&gt;всем врачам и ресепшену.&lt;br&gt;Рекомендация: RBAC по&lt;br&gt;врачам, аудит правок" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=2;dashed=1;arcSize=20;" vertex="1" parent="1"><mxGeometry x="900" y="400" width="230" height="90" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
