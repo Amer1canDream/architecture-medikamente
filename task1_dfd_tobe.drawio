@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="25.0.3">
+  <diagram name="DFD to-be MVP" id="dfd_tobe1">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="ent_patient" value="Пациент" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_reception" value="Ресепшн" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_doctor" value="Врач" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="640" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="proc_booking" value="1.0&#10;Онлайн-запись на приём" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="320" y="360" width="200" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="proc_access" value="2.0&#10;Управление доступом (RBAC / ABAC)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="640" y="140" width="220" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="proc_notify" value="3.0&#10;Уведомления (приложение / звонок)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="640" y="600" width="220" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ds_patients" value="D1  Данные пациентов" style="shape=partialRectangle;whiteSpace=wrap;html=1;top=0;bottom=1;right=0;left=0;fillColor=none;strokeColor=#333333;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="360" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ds_journal" value="D2  Журнал записи к специалисту" style="shape=partialRectangle;whiteSpace=wrap;html=1;top=0;bottom=1;right=0;left=0;fillColor=none;strokeColor=#333333;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="220" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ds_audit" value="D3  Аудит доступа к данным" style="shape=partialRectangle;whiteSpace=wrap;html=1;top=0;bottom=1;right=0;left=0;fillColor=none;strokeColor=#333333;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="140" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f1" value="запись на приём" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="ent_patient" target="proc_booking">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f2" value="сохранение записи" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="proc_booking" target="ds_journal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f3" value="просмотр записей своего специалиста" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="ent_reception" target="ds_journal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f4" value="проверка прав доступа" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;dashed=1;" edge="1" parent="1" source="proc_booking" target="proc_access">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f5" value="доступ по роли/атрибуту" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="proc_access" target="ds_patients">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f6" value="лог действия" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="proc_access" target="ds_audit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f7" value="только свои данные (анализы, заключения, договор)" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="ds_patients" target="ent_patient">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="620" />
+              <mxPoint x="110" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="f8" value="напоминание за день до приёма" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="ds_journal" target="proc_notify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f9" value="уведомление пациенту" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="proc_notify" target="ent_patient">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f10" value="уведомление врачу" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="proc_notify" target="ent_doctor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f11" value="подтверждение / отмена записи" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="ent_patient" target="proc_notify">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="f12" value="уведомление на ресепшн об отмене" style="endArrow=block;html=1;fontSize=10;strokeColor=#333333;" edge="1" parent="1" source="proc_notify" target="ent_reception">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="800" />
+              <mxPoint x="600" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
