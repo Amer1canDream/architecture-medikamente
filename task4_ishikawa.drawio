@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="25.0.3">
+  <diagram name="Ishikawa" id="ishikawa1">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="head" value="Утечка и несанкционированный доступ к конфиденциальным данным пациентов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="370" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="spine" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="420" as="sourcePoint" />
+            <mxPoint x="1180" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="box_process" value="Процессы&#10;- двойной учёт платежей в Excel и 1С&#10;- нет регламента работы с конфиденциальными данными&#10;- нет процедуры удаления данных по запросу клиента" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=middle;spacing=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="180" y="120" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bone_process" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="420" as="sourcePoint" />
+            <mxPoint x="310" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="box_data" value="Данные&#10;- ПДн хранятся в Excel, JPG, PDF без классификации&#10;- нет тегирования чувствительных данных&#10;- отсутствует единое хранилище данных" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=middle;spacing=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="500" y="120" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bone_data" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="420" as="sourcePoint" />
+            <mxPoint x="630" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="box_reg" value="Регуляторика&#10;- несоответствие требованиям 152-ФЗ&#10;- нет аудита доступа к данным&#10;- риски штрафов и репутационных потерь" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=middle;spacing=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="120" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bone_reg" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="420" as="sourcePoint" />
+            <mxPoint x="950" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="box_people" value="Люди&#10;- активный найм новых сотрудников без обучения по безопасности&#10;- ручная обработка ПДн ресепшеном и кассирами&#10;- нет разделения ролей и ответственности за данные" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=middle;spacing=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="180" y="640" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bone_people" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="420" as="sourcePoint" />
+            <mxPoint x="310" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="box_tech" value="Технологии&#10;- 1С работает в файловом режиме без разграничения доступа&#10;- общий диск с файлами без контроля доступа&#10;- нет шифрования данных пациентов" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=middle;spacing=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="500" y="640" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bone_tech" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="420" as="sourcePoint" />
+            <mxPoint x="630" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="box_infra" value="Инфраструктура&#10;- единый физический сервер без резервирования&#10;- отсутствие сегментации сети&#10;- нет системы мониторинга и алертинга" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=middle;spacing=8;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="640" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bone_infra" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="420" as="sourcePoint" />
+            <mxPoint x="950" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
